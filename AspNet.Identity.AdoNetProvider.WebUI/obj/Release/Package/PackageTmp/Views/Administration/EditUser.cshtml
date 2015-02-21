@@ -1,0 +1,40 @@
+﻿@using AspNet.Identity.AdoNetProvider.WebUI.Models
+@using AspNet.Identity.AdoNetProvider.Domain.Entities
+
+@model EditUserModel
+
+@{
+    ViewBag.Title = "Edit User";
+}
+
+<h2>Edit User</h2>
+@Html.ValidationSummary(false)
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(e => e.Id)
+    <div class="form-group">
+        <label>Email</label>
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Phone Number</label>
+        @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Assign user to roles:</label>
+        @foreach (AppRole role in Model.AvailableRoles)
+        {
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" checked="@Model.SelectedRoles.Contains(role.Name)" value="@role.Name" name="selectedRoles" /> @role.Name
+                </label>
+            </div>
+        }
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+    @Html.ActionLink("Cancel", "Users", null, new { @class = "btn btn-default" })
+}

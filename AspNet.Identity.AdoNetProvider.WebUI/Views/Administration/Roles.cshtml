@@ -1,0 +1,45 @@
+﻿@model IEnumerable<AspNet.Identity.AdoNetProvider.Domain.Entities.ApplicationRole>
+
+@{
+    ViewBag.Title = "System Roles";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Roles
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th></th>
+            </tr>
+            @if (!Model.Any())
+            {
+                <tr>
+                    <td colspan="3" class="text-center">
+                        No Roles
+                    </td>
+                </tr>
+            }
+            else
+            {
+                foreach (var role in Model)
+                {
+                    <tr>
+                        <td>@role.Id</td>
+                        <td>@role.Name</td>
+                        <td>
+                            @using (Html.BeginForm("DeleteRole", "Administration", new { id = role.Id }))
+                            {
+                                <button class="btn btn-danger btn-xs" type="submit">Delete</button>
+                            }
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+</div>
+@Html.ActionLink("Create", "CreateRole", null, new { @class = "btn btn-primary" })
