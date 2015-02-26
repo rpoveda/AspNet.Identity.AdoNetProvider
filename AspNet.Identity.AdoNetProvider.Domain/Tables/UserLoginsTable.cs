@@ -51,9 +51,12 @@ namespace AspNet.Identity.AdoNetProvider.Domain.Tables
                                        "from dbo.AspNetUserLogins " +
                                        "where UserId = @userId;";
 
-            var sqlParameters = new Dictionary<string, object>();
-            var rows = await _database.ExecuteReaderAsync(commandText, sqlParameters);
+            var sqlParameters = new Dictionary<string, object>
+            {
+                {"@userId", userId}
+            };
 
+            var rows = await _database.ExecuteReaderAsync(commandText, sqlParameters);
             return rows.Select(row => new UserLoginInfo(row["LoginProvider"], row["ProviderKey"])).ToList();
         }
 

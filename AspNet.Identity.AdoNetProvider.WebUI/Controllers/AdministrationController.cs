@@ -129,8 +129,7 @@ namespace AspNet.Identity.AdoNetProvider.WebUI.Controllers
                     }
                 }
 
-                if (validPassword != null &&
-                    ((!validEmail.Succeeded || model.Password == string.Empty || !validPassword.Succeeded)))
+                if (validPassword != null && ((!validEmail.Succeeded || model.Password == string.Empty || !validPassword.Succeeded)))
                 {
                     return View(model);
                 }

@@ -1,5 +1,88 @@
-﻿@{
-    ViewBag.Title = "EditProfile";
+﻿@model AspNet.Identity.AdoNetProvider.WebUI.Models.EditProfileModel
+
+@{
+    ViewBag.Title = "Edit Profile";
 }
 
-<h2>EditProfile</h2>
+<h2>Edit Profile</h2>
+@if (Model.Message != string.Empty)
+{
+    <div class="alert alert-warning alert-dismissible fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+        @Model.Message
+    </div>
+}
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Change Password
+    </div>
+    @using (Html.BeginForm("ChangePassword", "Account", FormMethod.Post, new { @class = "form-inline", id = "change-password-form" }))
+    {
+        <div class="form-group">
+            @Html.LabelFor(e => e.NewPassword, "New Password", new { @class = "sr-only" })
+            @Html.PasswordFor(e => e.NewPassword, new { @class = "form-control", placeholder = "New Password" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(e => e.NewPasswordConfirmation, "New Password Confirmation", new { @class = "sr-only" })
+            @Html.PasswordFor(e => e.NewPasswordConfirmation, new { @class = "form-control", placeholder = "New Password Confirmation" })
+        </div>
+        <button type="submit" class="btn btn-default">@(Model.UserHasPassword ? "Change Password" : "Create Password")</button>
+    }
+</div>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        External Logins
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <tr>
+                <th>#</th>
+                <th>Provider Name</th>
+                <th>Provider Key</th>
+                <th></th>
+            </tr>
+            @if (!Model.ExternalProviders.Any())
+            {
+                <tr>
+                    <td colspan="4" class="text-center">There are no external login providers</td>
+                </tr>
+            }
+            else
+            {
+                for (var i = 0; i < Model.ExternalProviders.Count; i++)
+                {
+                    <tr>
+                        <td>@(i + 1)</td>
+                        <td>@Model.ExternalProviders[i].LoginProvider</td>
+                        <td>@Model.ExternalProviders[i].ProviderKey</td>
+                        <td>
+                            @using (Html.BeginForm("DeleteLogin", "Account", new { loginProvider = Model.ExternalProviders[i].LoginProvider, providerKey = Model.ExternalProviders[i].ProviderKey }))
+                            {
+                                <button class="btn btn-danger btn-xs" type="submit" disabled="@(Model.ExternalProviders.Count <= 1)"
+                                        title="@(Model.ExternalProviders.Count <= 1 ? "You must have more than one providers to remove " + Model.ExternalProviders[i].LoginProvider + " login" : "Remove " + Model.ExternalProviders[i].LoginProvider + " login")">
+                                    Remove
+                                </button>
+                            }
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+    @if (Model.OtherProviders.Count > 0)
+    {
+        <div class="panel-footer">
+            <span>Link account to: </span>
+            @using (Html.BeginForm("LinkLogin", "Account", FormMethod.Post, new { id = "link-accounts-form" }))
+            {
+                @Html.AntiForgeryToken()
+                foreach (var description in Model.OtherProviders)
+                {
+                    <button type="submit" class="btn btn-default" name="provider" value="@description.AuthenticationType" title="Connect using @description.Caption">@description.AuthenticationType</button>
+                }
+            }
+        </div>
+    }
+</div>

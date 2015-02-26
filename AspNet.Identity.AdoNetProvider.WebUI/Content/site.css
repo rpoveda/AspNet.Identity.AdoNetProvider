@@ -1,3 +1,11 @@
-﻿#externalProviders {
+﻿#external-providers {
     padding-left: 0;
+}
+
+#change-password-form {
+    padding: 10px;
+}
+
+#link-accounts-form {
+    display: inline-block;
 }

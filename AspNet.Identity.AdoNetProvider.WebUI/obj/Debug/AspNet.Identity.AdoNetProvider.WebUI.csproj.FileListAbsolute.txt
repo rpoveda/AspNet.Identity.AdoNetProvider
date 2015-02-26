@@ -13,6 +13,7 @@ C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetPro
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\Microsoft.Owin.Security.OAuth.dll
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\Newtonsoft.Json.dll
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\Owin.dll
+C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\System.Linq.Dynamic.dll
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\System.Web.Helpers.dll
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\System.Web.Mvc.dll
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\System.Web.Razor.dll

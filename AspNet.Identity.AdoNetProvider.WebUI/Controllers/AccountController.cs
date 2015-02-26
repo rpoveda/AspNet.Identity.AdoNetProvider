@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -243,10 +244,93 @@ namespace AspNet.Identity.AdoNetProvider.WebUI.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [Authorize]
         [HttpGet]
-        public ViewResult EditProfile()
+        public async Task<ViewResult> EditProfile(string message = "")
         {
-            return View();
+            var userId = User.Identity.GetUserId();
+            var userLogins = await UserManager.GetLoginsAsync(userId);
+            var otherLogins = AuthenticationManager.GetExternalAuthenticationTypes().Where(auth => userLogins.All(p => auth.AuthenticationType != p.LoginProvider));
+            var hasPassword = await UserManager.HasPasswordAsync(userId);
+
+            var model = new EditProfileModel
+            {
+                ExternalProviders = userLogins.ToList(),
+                OtherProviders = otherLogins.ToList(),
+                UserHasPassword = hasPassword,
+                Message = message
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult LinkLogin(string provider)
+        {
+            return new ChallengeResult(provider, Url.Action("LinkLoginCallback", "Account"), User.Identity.GetUserId());
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> LinkLoginCallback()
+        {
+            var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync();
+            var userId = User.Identity.GetUserId();
+            var message = string.Empty;
+
+            if (loginInfo == null)
+            {
+                message = "You have to provide permission to the application in order to connect using a social provider.";
+            }
+            else
+            {
+                var result = await UserManager.AddLoginAsync(userId, loginInfo.Login);
+
+                if (!result.Succeeded)
+                {
+                    message = "An error occured. Please try again.";
+                    return RedirectToAction("EditProfile", "Account", new { message });
+                }
+
+                message = "You have successfully linked your account with " + loginInfo.Login.LoginProvider + ".";
+
+                if (loginInfo.Login.LoginProvider != "Facebook")
+                {
+                    return RedirectToAction("EditProfile", "Account", new { message });
+                }
+
+                var user = await UserManager.FindByIdAsync(userId);
+                await StoreFacebookAuthenticationToken(user);
+            }
+
+            return RedirectToAction("EditProfile", "Account", new { message });
+        }
+
+        [Authorize]
+        [HttpPost]
+        public async Task<ActionResult> DeleteLogin(string loginProvider, string providerKey)
+        {
+            string message;
+            var userId = User.Identity.GetUserId();
+            var result = await UserManager.RemoveLoginAsync(userId, new UserLoginInfo(loginProvider, providerKey));
+
+            if (result.Succeeded)
+            {
+                var user = await UserManager.FindByIdAsync(userId);
+
+                if (user != null)
+                {
+                    await SignInManager.SignInAsync(user, false, false);
+                }
+
+                message = loginProvider + " login was successfully removed.";
+            }
+            else
+            {
+                message = "Your login could not be removed. An error has occured.";
+            }
+
+            return RedirectToAction("EditProfile", "Account", new { message });
         }
 
         protected override void Dispose(bool disposing)

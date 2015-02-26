@@ -303,7 +303,7 @@ namespace AspNet.Identity.AdoNetProvider.Domain.Stores
                 throw new ArgumentNullException("user", "Parameter user cannot be null.");
             }
 
-            return await _userTable.GetPasswordHashAsync(user.Id) != string.Empty;
+            return await _userTable.GetPasswordHashAsync(user.Id) != null;
         }
 
         public Task SetPasswordHashAsync(T user, string passwordHash)
