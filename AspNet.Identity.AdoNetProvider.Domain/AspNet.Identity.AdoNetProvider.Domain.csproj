@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DatabaseScripts\ClearDatabase.sql" />
+    <Content Include="DatabaseScripts\DatabaseLogin.txt" />
     <Content Include="DatabaseScripts\IdentityDatabaseScript.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

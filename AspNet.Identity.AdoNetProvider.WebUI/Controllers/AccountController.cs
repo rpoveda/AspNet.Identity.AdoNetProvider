@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -118,7 +117,6 @@ namespace AspNet.Identity.AdoNetProvider.WebUI.Controllers
                     {
                         ViewBag.Message = "A confirmation email is going to arrive in your inbox shortly!";
                         var confirmationUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code }, Request.Url.Scheme);
-
                         await UserManager.SendEmailAsync(user.Id, "Please Confirm you email", "Please confirm your account by clicking this link: <a href=\"" + confirmationUrl + "\">link</a>");
                     }
 
@@ -141,11 +139,11 @@ namespace AspNet.Identity.AdoNetProvider.WebUI.Controllers
         }
 
         [Authorize]
-        [HttpPost]
+        [HttpGet]
         public ActionResult Logout()
         {
             AuthenticationManager.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Account");
         }
 
         [HttpPost]
@@ -276,7 +274,7 @@ namespace AspNet.Identity.AdoNetProvider.WebUI.Controllers
         {
             var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync();
             var userId = User.Identity.GetUserId();
-            var message = string.Empty;
+            string message;
 
             if (loginInfo == null)
             {

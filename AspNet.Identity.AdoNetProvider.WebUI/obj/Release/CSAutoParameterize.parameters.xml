@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IdentityDatabase-Web.config Connection String" description="IdentityDatabase Connection String used in web.config by the application to access the database." defaultValue="Data Source=.;Initial Catalog=IdentityDatabase;Integrated Security=SSPI;MultipleActiveResultSets=true" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Giorgos\\Documents\\Visual\ Studio\ 2013\\Projects\\AspNet\.Identity\.AdoNetProvider\\AspNet\.Identity\.AdoNetProvider\.WebUI\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='IdentityDatabase']/@connectionString" />
+  </parameter>
+</parameters>

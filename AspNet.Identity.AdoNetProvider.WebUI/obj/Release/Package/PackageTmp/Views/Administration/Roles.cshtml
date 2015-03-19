@@ -1,13 +1,11 @@
-﻿@using AspNet.Identity.AdoNetProvider.WebUI.Infrastructure
-@using AspNet.Identity.AdoNetProvider.Domain.Entities
-
-@model IEnumerable<AppRole>
+﻿@model IEnumerable<AspNet.Identity.AdoNetProvider.Domain.Entities.ApplicationRole>
 
 @{
     ViewBag.Title = "System Roles";
 }
 
-<div class="panel panel-primary">
+<h2>System Roles</h2>
+<div class="panel panel-default">
     <div class="panel-heading">
         Roles
     </div>
@@ -18,7 +16,7 @@
                 <th>Name</th>
                 <th></th>
             </tr>
-            @if (Model.Count() == 0)
+            @if (!Model.Any())
             {
                 <tr>
                     <td colspan="3" class="text-center">
@@ -28,7 +26,7 @@
             }
             else
             {
-                foreach (AppRole role in Model)
+                foreach (var role in Model)
                 {
                     <tr>
                         <td>@role.Id</td>

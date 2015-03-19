@@ -37,3 +37,6 @@ C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetPro
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\obj\Release\AspNet.Identity.AdoNetProvider.WebUI.csprojResolveAssemblyReference.cache
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\obj\Release\AspNet.Identity.AdoNetProvider.WebUI.dll
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\obj\Release\AspNet.Identity.AdoNetProvider.WebUI.pdb
+C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\System.Linq.Dynamic.dll
+C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\Microsoft.Owin.Security.Facebook.xml

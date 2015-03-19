@@ -14,6 +14,6 @@ C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetPro
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.Domain\bin\Release\Microsoft.Owin.Security.xml
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.Domain\bin\Release\Microsoft.Owin.Security.Cookies.xml
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.Domain\bin\Release\Microsoft.Owin.Security.OAuth.xml
-C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.Domain\bin\Release\Newtonsoft.Json.xml
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.Domain\obj\Release\AspNet.Identity.AdoNetProvider.Domain.dll
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.Domain\obj\Release\AspNet.Identity.AdoNetProvider.Domain.pdb
+C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.Domain\obj\Release\AspNet.Identity.AdoNetProvider.Domain.csprojResolveAssemblyReference.cache

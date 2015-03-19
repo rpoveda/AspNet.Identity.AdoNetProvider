@@ -1,7 +1,4 @@
-﻿@using AspNet.Identity.AdoNetProvider.WebUI.Models
-@using AspNet.Identity.AdoNetProvider.Domain.Entities
-
-@model EditUserModel
+﻿@model AspNet.Identity.AdoNetProvider.WebUI.Models.EditUserModel
 
 @{
     ViewBag.Title = "Edit User";
@@ -26,11 +23,11 @@
     </div>
     <div class="form-group">
         <label>Assign user to roles:</label>
-        @foreach (AppRole role in Model.AvailableRoles)
+        @foreach (var role in Model.AvailableRoles)
         {
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" checked="@Model.SelectedRoles.Contains(role.Name)" value="@role.Name" name="selectedRoles" /> @role.Name
+                    <input type="checkbox" checked="@(Model.SelectedRoles != null && Model.SelectedRoles.Contains(role.Name))" value="@role.Name" name="selectedRoles" /> @role.Name
                 </label>
             </div>
         }
