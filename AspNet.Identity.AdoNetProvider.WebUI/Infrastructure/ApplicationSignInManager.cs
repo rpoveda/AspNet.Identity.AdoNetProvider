@@ -105,8 +105,7 @@ namespace AspNet.Identity.AdoNetProvider.WebUI.Infrastructure
             }
         }
 
-        public override async Task<SignInStatus> TwoFactorSignInAsync(string provider, string code, bool isPersistent,
-            bool rememberBrowser)
+        public override async Task<SignInStatus> TwoFactorSignInAsync(string provider, string code, bool isPersistent, bool rememberBrowser)
         {
             var userId = await GetVerifiedUserIdAsync();
 

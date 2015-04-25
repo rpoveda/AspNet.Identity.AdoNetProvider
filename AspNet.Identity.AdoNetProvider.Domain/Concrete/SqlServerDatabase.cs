@@ -28,7 +28,6 @@ namespace AspNet.Identity.AdoNetProvider.Domain.Concrete
         }
 
         #region ADO.NET wrapper methods
-
         /// <summary>
         ///     Executes a T-SQL query in the database and returns the number of rows affected.
         /// </summary>
@@ -145,11 +144,9 @@ namespace AspNet.Identity.AdoNetProvider.Domain.Concrete
             reader.Close();
             return rows;
         }
-
         #endregion
 
         #region Asynchronous versions of ADO.NET wrapper methods
-
         /// <summary>
         ///     Asynchronously executes a T-SQL query in the database and returns the number of rows affected.
         /// </summary>
@@ -266,11 +263,9 @@ namespace AspNet.Identity.AdoNetProvider.Domain.Concrete
             reader.Close();
             return rows;
         }
-
         #endregion
 
         #region Private Methods
-
         private SqlCommand CreateCommand(string commandText, Dictionary<string, object> sqlParameters)
         {
             var command = _connection.CreateCommand();
@@ -320,7 +315,6 @@ namespace AspNet.Identity.AdoNetProvider.Domain.Concrete
                 _connection.Close();
             }
         }
-
         #endregion
     }
 }

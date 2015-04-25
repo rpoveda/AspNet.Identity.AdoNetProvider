@@ -14,8 +14,7 @@ namespace AspNet.Identity.AdoNetProvider.WebUI.Infrastructure
         {
         }
 
-        public static ApplicationRoleManager Create(IdentityFactoryOptions<ApplicationRoleManager> options,
-            IOwinContext context)
+        public static ApplicationRoleManager Create(IdentityFactoryOptions<ApplicationRoleManager> options, IOwinContext context)
         {
             return new ApplicationRoleManager(new RoleStore<ApplicationRole>(context.Get<SqlServerDatabase>()));
         }

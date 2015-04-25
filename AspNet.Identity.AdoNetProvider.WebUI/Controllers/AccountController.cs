@@ -11,6 +11,7 @@ using Microsoft.Owin.Security;
 
 namespace AspNet.Identity.AdoNetProvider.WebUI.Controllers
 {
+    [NoCache]
     public class AccountController : Controller
     {
         private const string XsrfKey = "XsrfId";
@@ -97,7 +98,6 @@ namespace AspNet.Identity.AdoNetProvider.WebUI.Controllers
             }
 
             var user = await UserManager.FindByNameAsync(model.UserName);
-            IdentityResult result;
 
             if (user == null)
             {
@@ -107,7 +107,7 @@ namespace AspNet.Identity.AdoNetProvider.WebUI.Controllers
                     Email = model.UserName
                 };
 
-                result = await UserManager.CreateAsync(user, model.Password);
+                var result = await UserManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
                 {
@@ -121,28 +121,28 @@ namespace AspNet.Identity.AdoNetProvider.WebUI.Controllers
                     }
 
                     await UserManager.AddToRoleAsync(user.Id, "User");
-                    return View();
+                }
+                else
+                {
+                    AddErrors(result);
+                    ViewBag.Message = "We are sorry, but an error occured while creating your account.";
                 }
             }
             else
             {
-                result = await UserManager.AddPasswordAsync(user.Id, model.Password);
-
-                if (result.Succeeded)
-                {
-                    return RedirectToAction("Index", "Home");
-                }
+                ViewBag.Message = "There is already an account using the email " + user.Email + ".";
             }
 
-            AddErrors(result);
-            return View(model);
+            return View();
         }
 
         [Authorize]
         [HttpGet]
         public ActionResult Logout()
         {
-            AuthenticationManager.SignOut();
+            AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie, DefaultAuthenticationTypes.ExternalCookie, DefaultAuthenticationTypes.TwoFactorCookie,
+                DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
+
             return RedirectToAction("Login", "Account");
         }
 
@@ -180,8 +180,6 @@ namespace AspNet.Identity.AdoNetProvider.WebUI.Controllers
                 default:
                     var user = await UserManager.FindByNameAsync(loginInfo.Email);
 
-                    // We need to check if user has already created an account using the normal registration process
-                    // (without using external providers).
                     if (user == null)
                     {
                         user = new ApplicationUser
@@ -199,17 +197,20 @@ namespace AspNet.Identity.AdoNetProvider.WebUI.Controllers
                         }
 
                         await UserManager.AddToRoleAsync(user.Id, "User");
+
+                        await UserManager.AddLoginAsync(user.Id, loginInfo.Login);
+
+                        if (loginInfo.Login.LoginProvider == "Facebook")
+                        {
+                            await StoreFacebookAuthenticationToken(user);
+                        }
+
+                        await SignInManager.SignInAsync(user, false, false);
+                        return RedirectToAction("Index", "Home");
                     }
 
-                    await UserManager.AddLoginAsync(user.Id, loginInfo.Login);
-
-                    if (loginInfo.Login.LoginProvider == "Facebook")
-                    {
-                        await StoreFacebookAuthenticationToken(user);
-                    }
-
-                    await SignInManager.SignInAsync(user, false, false);
-                    return RedirectToAction("Index", "Home");
+                    ViewBag.Message = "There is already an account using the email " + user.Email + ".";
+                    return View("Login");
             }
         }
 
@@ -218,7 +219,13 @@ namespace AspNet.Identity.AdoNetProvider.WebUI.Controllers
         {
             if (userId == null || code == null)
             {
-                ViewBag.Message = "We could not verify your account successfully.";
+                return RedirectToAction("Login", "Account");
+            }
+
+            var user = await UserManager.FindByIdAsync(userId);
+
+            if (user != null && user.EmailConfirmed)
+            {
                 return RedirectToAction("Login", "Account");
             }
 
@@ -226,15 +233,11 @@ namespace AspNet.Identity.AdoNetProvider.WebUI.Controllers
 
             if (!result.Succeeded)
             {
-                ViewBag.Message = "We could not verify your account successfully.";
                 return RedirectToAction("Login", "Account");
             }
 
-            var user = await UserManager.FindByIdAsync(userId);
-
             if (user == null)
             {
-                ViewBag.Message = "We could not find your account.";
                 return RedirectToAction("Login", "Account");
             }
 

@@ -10,10 +10,8 @@ using Microsoft.AspNet.Identity;
 
 namespace AspNet.Identity.AdoNetProvider.Domain.Stores
 {
-    public class UserStore<T> : IUserLoginStore<T>, IUserClaimStore<T>, IUserRoleStore<T>, IUserPasswordStore<T>,
-        IUserSecurityStampStore<T>, IQueryableUserStore<T>, IUserEmailStore<T>,
-        IUserPhoneNumberStore<T>, IUserTwoFactorStore<T, string>, IUserLockoutStore<T, string>, IUserStore<T>
-        where T : ApplicationUser
+    public class UserStore<T> : IUserLoginStore<T>, IUserClaimStore<T>, IUserRoleStore<T>, IUserPasswordStore<T>, IUserSecurityStampStore<T>, IQueryableUserStore<T>, IUserEmailStore<T>,
+        IUserPhoneNumberStore<T>, IUserTwoFactorStore<T, string>, IUserLockoutStore<T, string>, IUserStore<T> where T : ApplicationUser
     {
         private readonly RoleTable<ApplicationRole> _roleTable;
         private readonly UserClaimsTable _userClaimsTable;
@@ -35,16 +33,13 @@ namespace AspNet.Identity.AdoNetProvider.Domain.Stores
         public SqlServerDatabase Database { get; set; }
 
         #region IQueryableUserStore implementation
-
         public IQueryable<T> Users
         {
             get { return _userTable.GetAllUsers(); }
         }
-
         #endregion
 
         #region IUserLoginStore implementation
-
         public Task AddLoginAsync(T user, UserLoginInfo login)
         {
             if (user == null)
@@ -166,11 +161,9 @@ namespace AspNet.Identity.AdoNetProvider.Domain.Stores
             Database.Dispose();
             Database = null;
         }
-
         #endregion
 
         #region IUserClaimStore implementation
-
         public Task AddClaimAsync(T user, Claim claim)
         {
             if (user == null)
@@ -210,11 +203,9 @@ namespace AspNet.Identity.AdoNetProvider.Domain.Stores
 
             return _userClaimsTable.DeleteUserClaimAsync(user.Id);
         }
-
         #endregion
 
         #region IUserRoleStore implementation
-
         public async Task AddToRoleAsync(T user, string roleName)
         {
             if (user == null)
@@ -281,11 +272,9 @@ namespace AspNet.Identity.AdoNetProvider.Domain.Stores
                 await _userRolesTable.RemoveUserFromRoleAsync(user, (string)roleId);
             }
         }
-
         #endregion
 
         #region IUserPasswordStore implementation
-
         public async Task<string> GetPasswordHashAsync(T user)
         {
             if (user == null)
@@ -311,11 +300,9 @@ namespace AspNet.Identity.AdoNetProvider.Domain.Stores
             user.PasswordHash = passwordHash;
             return Task.FromResult<object>(null);
         }
-
         #endregion
 
         #region IUserSecurityStampStore implementation
-
         public Task<string> GetSecurityStampAsync(T user)
         {
             return Task.FromResult(user.SecurityStamp);
@@ -326,11 +313,9 @@ namespace AspNet.Identity.AdoNetProvider.Domain.Stores
             user.SecurityStamp = stamp;
             return Task.FromResult<object>(null);
         }
-
         #endregion
 
         #region IUserEmailStore implementation
-
         public async Task<T> FindByEmailAsync(string email)
         {
             if (string.IsNullOrEmpty(email))
@@ -363,11 +348,9 @@ namespace AspNet.Identity.AdoNetProvider.Domain.Stores
             user.EmailConfirmed = confirmed;
             return _userTable.UpdateUserAsync(user);
         }
-
         #endregion
 
         #region IUserPhoneNumberStore implementation
-
         public Task<string> GetPhoneNumberAsync(T user)
         {
             return Task.FromResult(user.PhoneNumber);
@@ -389,11 +372,9 @@ namespace AspNet.Identity.AdoNetProvider.Domain.Stores
             user.PhoneNumberConfirmed = confirmed;
             return _userTable.UpdateUserAsync(user);
         }
-
         #endregion
 
         #region IUserTwoFactorStore implementation
-
         public Task<bool> GetTwoFactorEnabledAsync(T user)
         {
             return Task.FromResult(user.TwoFactorEnabled);
@@ -404,11 +385,9 @@ namespace AspNet.Identity.AdoNetProvider.Domain.Stores
             user.TwoFactorEnabled = enabled;
             return _userTable.UpdateUserAsync(user);
         }
-
         #endregion
 
         #region IUserLockoutStore implementation
-
         public Task<int> GetAccessFailedCountAsync(T user)
         {
             return Task.FromResult(user.AccessFailedCount);
@@ -450,7 +429,6 @@ namespace AspNet.Identity.AdoNetProvider.Domain.Stores
             user.LockoutEndDateUtc = lockoutEnd.UtcDateTime;
             return _userTable.UpdateUserAsync(user);
         }
-
         #endregion
     }
 }

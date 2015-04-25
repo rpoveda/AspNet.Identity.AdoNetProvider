@@ -82,13 +82,9 @@ namespace AspNet.Identity.AdoNetProvider.Domain.Tables
             user.PhoneNumber = string.IsNullOrEmpty(row["PhoneNumber"]) ? null : row["PhoneNumber"];
             user.PhoneNumberConfirmed = row["PhoneNumberConfirmed"] == "True";
             user.TwoFactorEnabled = row["TwoFactorEnabled"] == "True";
-            user.LockoutEndDateUtc = string.IsNullOrEmpty(row["LockoutEndDateUtc"])
-                ? default(DateTime?)
-                : DateTime.Parse(row["LockoutEndDateUtc"]);
+            user.LockoutEndDateUtc = string.IsNullOrEmpty(row["LockoutEndDateUtc"]) ? default(DateTime?) : DateTime.Parse(row["LockoutEndDateUtc"]);
             user.LockoutEnabled = row["LockoutEnabled"] == "True";
-            user.AccessFailedCount = string.IsNullOrEmpty(row["AccessFailedCount"])
-                ? 0
-                : int.Parse(row["AccessFailedCount"]);
+            user.AccessFailedCount = string.IsNullOrEmpty(row["AccessFailedCount"]) ? 0 : int.Parse(row["AccessFailedCount"]);
             user.UserName = row["UserName"];
 
             return user;
@@ -122,13 +118,9 @@ namespace AspNet.Identity.AdoNetProvider.Domain.Tables
             user.PhoneNumber = string.IsNullOrEmpty(row["PhoneNumber"]) ? null : row["PhoneNumber"];
             user.PhoneNumberConfirmed = row["PhoneNumberConfirmed"] == "True";
             user.TwoFactorEnabled = row["TwoFactorEnabled"] == "True";
-            user.LockoutEndDateUtc = string.IsNullOrEmpty(row["LockoutEndDateUtc"])
-                ? default(DateTime)
-                : DateTime.Parse(row["LockoutEndDateUtc"]);
+            user.LockoutEndDateUtc = string.IsNullOrEmpty(row["LockoutEndDateUtc"]) ? default(DateTime) : DateTime.Parse(row["LockoutEndDateUtc"]);
             user.LockoutEnabled = row["LockoutEnabled"] == "True";
-            user.AccessFailedCount = string.IsNullOrEmpty(row["AccessFailedCount"])
-                ? 0
-                : int.Parse(row["AccessFailedCount"]);
+            user.AccessFailedCount = string.IsNullOrEmpty(row["AccessFailedCount"]) ? 0 : int.Parse(row["AccessFailedCount"]);
             user.UserName = row["UserName"];
 
             return user;
@@ -162,13 +154,9 @@ namespace AspNet.Identity.AdoNetProvider.Domain.Tables
             user.PhoneNumber = string.IsNullOrEmpty(row["PhoneNumber"]) ? null : row["PhoneNumber"];
             user.PhoneNumberConfirmed = row["PhoneNumberConfirmed"] == "True";
             user.TwoFactorEnabled = row["TwoFactorEnabled"] == "True";
-            user.LockoutEndDateUtc = string.IsNullOrEmpty(row["LockoutEndDateUtc"])
-                ? default(DateTime)
-                : DateTime.Parse(row["LockoutEndDateUtc"]);
+            user.LockoutEndDateUtc = string.IsNullOrEmpty(row["LockoutEndDateUtc"]) ? default(DateTime) : DateTime.Parse(row["LockoutEndDateUtc"]);
             user.LockoutEnabled = row["LockoutEnabled"] == "True";
-            user.AccessFailedCount = string.IsNullOrEmpty(row["AccessFailedCount"])
-                ? 0
-                : int.Parse(row["AccessFailedCount"]);
+            user.AccessFailedCount = string.IsNullOrEmpty(row["AccessFailedCount"]) ? 0 : int.Parse(row["AccessFailedCount"]);
             user.UserName = row["UserName"];
 
             return user;
@@ -190,13 +178,9 @@ namespace AspNet.Identity.AdoNetProvider.Domain.Tables
                                 PhoneNumber = e.SingleOrDefault(p => p.Key == "PhoneNumber").Value,
                                 PhoneNumberConfirmed = e.Single(p => p.Key == "PhoneNumberConfirmed").Value == "True",
                                 TwoFactorEnabled = e.Single(p => p.Key == "TwoFactorEnabled").Value == "True",
-                                LockoutEndDateUtc = string.IsNullOrEmpty(e.SingleOrDefault(p => p.Key == "LockoutEndDateUtc").Value)
-                                        ? default(DateTime)
-                                        : DateTime.Parse(e.SingleOrDefault(p => p.Key == "LockoutEndDateUtc").Value),
+                                LockoutEndDateUtc = string.IsNullOrEmpty(e.SingleOrDefault(p => p.Key == "LockoutEndDateUtc").Value) ? default(DateTime) : DateTime.Parse(e.SingleOrDefault(p => p.Key == "LockoutEndDateUtc").Value),
                                 LockoutEnabled = e.Single(p => p.Key == "LockoutEnabled").Value == "1",
-                                AccessFailedCount = string.IsNullOrEmpty(e.Single(p => p.Key == "AccessFailedCount").Value)
-                                        ? 0
-                                        : int.Parse(e.Single(p => p.Key == "AccessFailedCount").Value),
+                                AccessFailedCount = string.IsNullOrEmpty(e.Single(p => p.Key == "AccessFailedCount").Value) ? 0 : int.Parse(e.Single(p => p.Key == "AccessFailedCount").Value),
                                 UserName = e.SingleOrDefault(p => p.Key == "UserName").Value
                             } as T).AsQueryable();
         }

@@ -1,3 +1,4 @@
+C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\obj\Release\AspNet.Identity.AdoNetProvider.WebUI.csprojResolveAssemblyReference.cache
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\AspNet.Identity.AdoNetProvider.WebUI.dll.config
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\AspNet.Identity.AdoNetProvider.WebUI.dll
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\AspNet.Identity.AdoNetProvider.WebUI.pdb
@@ -8,10 +9,12 @@ C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetPro
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\Microsoft.Owin.Host.SystemWeb.dll
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\Microsoft.Owin.Security.Cookies.dll
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\Microsoft.Owin.Security.dll
+C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\Microsoft.Owin.Security.Facebook.dll
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\Microsoft.Owin.Security.Google.dll
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\Microsoft.Owin.Security.OAuth.dll
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\Newtonsoft.Json.dll
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\Owin.dll
+C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\System.Linq.Dynamic.dll
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\System.Web.Helpers.dll
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\System.Web.Mvc.dll
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\System.Web.Razor.dll
@@ -25,6 +28,7 @@ C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetPro
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\Microsoft.Owin.Host.SystemWeb.xml
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\Microsoft.Owin.Security.xml
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\Microsoft.Owin.Security.Facebook.xml
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\Newtonsoft.Json.xml
@@ -34,9 +38,5 @@ C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetPro
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\System.Web.WebPages.xml
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\System.Web.WebPages.Razor.xml
-C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\obj\Release\AspNet.Identity.AdoNetProvider.WebUI.csprojResolveAssemblyReference.cache
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\obj\Release\AspNet.Identity.AdoNetProvider.WebUI.dll
 C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\obj\Release\AspNet.Identity.AdoNetProvider.WebUI.pdb
-C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\Microsoft.Owin.Security.Facebook.dll
-C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\System.Linq.Dynamic.dll
-C:\Users\Giorgos\Documents\Visual Studio 2013\Projects\AspNet.Identity.AdoNetProvider\AspNet.Identity.AdoNetProvider.WebUI\bin\Microsoft.Owin.Security.Facebook.xml

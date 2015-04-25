@@ -21,7 +21,6 @@ namespace AspNet.Identity.AdoNetProvider.Domain.Stores
         public SqlServerDatabase Database { get; set; }
 
         #region IQueryableRoleStore implementation
-
         public IQueryable<T> Roles
         {
             get { return _roleTable.GetAllRoles(); }
@@ -87,7 +86,6 @@ namespace AspNet.Identity.AdoNetProvider.Domain.Stores
             Database.Dispose();
             Database = null;
         }
-
         #endregion
     }
 }
