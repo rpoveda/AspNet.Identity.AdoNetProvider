@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
   <parameter name="IIS Web Application Name" description="" value="adonetidentity" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Giorgos\\Documents\\Visual\ Studio\ 2013\\Projects\\AspNet\.Identity\.AdoNetProvider\\AspNet\.Identity\.AdoNetProvider\.WebUI\\obj\\Release\\Package\\PackageTmp$" />
-    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Giorgos\\Documents\\Visual\ Studio\ 2013\\Projects\\AspNet\.Identity\.AdoNetProvider\\AspNet\.Identity\.AdoNetProvider\.WebUI\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Giorgos\\Documents\\GitHub\\AspNet\.Identity\.AdoNetProvider\\AspNet\.Identity\.AdoNetProvider\.WebUI\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Giorgos\\Documents\\GitHub\\AspNet\.Identity\.AdoNetProvider\\AspNet\.Identity\.AdoNetProvider\.WebUI\\obj\\Release\\Package\\PackageTmp$" />
   </parameter>
   <parameter name="IdentityDatabase-Web.config Connection String" description="" value="Data Source=tcp:mx0s31hv26.database.windows.net,1433;Initial Catalog=IdentityDb;Integrated Security=False;User ID=Giorgos_Manoltzas07@mx0s31hv26;Password=Saturno!37KW!;Connect Timeout=30;Encrypt=True" tags="">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\Giorgos\\Documents\\Visual\ Studio\ 2013\\Projects\\AspNet\.Identity\.AdoNetProvider\\AspNet\.Identity\.AdoNetProvider\.WebUI\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='IdentityDatabase']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Giorgos\\Documents\\GitHub\\AspNet\.Identity\.AdoNetProvider\\AspNet\.Identity\.AdoNetProvider\.WebUI\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='IdentityDatabase']/@connectionString" />
   </parameter>
 </parameters>

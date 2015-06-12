@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
   <parameter name="IdentityDatabase-Web.config Connection String" description="IdentityDatabase Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:mx0s31hv26.database.windows.net,1433;Database=IdentityDb;User ID=Giorgos_Manoltzas07@mx0s31hv26;Password=Saturno!37KW!;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\Giorgos\\Documents\\Visual\ Studio\ 2013\\Projects\\AspNet\.Identity\.AdoNetProvider\\AspNet\.Identity\.AdoNetProvider\.WebUI\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='IdentityDatabase']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Giorgos\\Documents\\GitHub\\AspNet\.Identity\.AdoNetProvider\\AspNet\.Identity\.AdoNetProvider\.WebUI\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='IdentityDatabase']/@connectionString" />
   </parameter>
 </parameters>
